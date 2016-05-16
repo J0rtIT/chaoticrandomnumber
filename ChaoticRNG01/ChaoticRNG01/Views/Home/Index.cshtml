@@ -2,30 +2,34 @@
     ViewBag.Title = "Home Page";
 }
 
+<div> &nbsp;</div>
+
 <div class="jumbotron">
     <h1>Chaotic Random Generator Number</h1>
-    <p class="lead">This web page will use Chaos principes and a Pseudo-Random Generator number as seeder of this process. </p>
-
-
-
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead">From Pseudo-Random generator number to real chaotic Random Generator. </p>
 </div>
 
 <div class="row">
-    <h2> Theoric Principles</h2>
-    <div class="col-md-6">
-        <h4>Logistic Map Theory</h4>
-        <p class="text-justify">
 
+    <div class="col-md-5">
+        <h2>Logistic Map Theory</h2>
+        <p class="text-justify">
+            This WebApp uses a Pseudo-Random number generator using the .Net class called <a href="https://msdn.microsoft.com/en-us/library/system.random(v=vs.110).aspx">Random</a> introduced in .Net 4.5 as pesudo-random number generator that meets statistical requiremets for randomness (<a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">Source Code</a>). Now using this generator and the <a href="https://en.wikipedia.org/wiki/Logistic_map">Logistic Map</a> equation using the parameter r=4 to be sure to be in the chaotic response and iterate the equation a thousand times
         </p>
     </div>
+    <div class="col-md-1">
+        &nbsp;
+    </div>
     <div class="col-md-6">
-        <h4>Chaotic Random Number Generator</h4>
+        <h2>Chaotic Random Number Generator</h2>
+        <p class="text-justify">
+            This WebApp uses a Pseudo-Random number generator
+        </p>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
         <h2>Single Generator Number</h2>
         <p>
             @using (Ajax.BeginForm("GetSingle", "Home", new AjaxOptions
@@ -37,7 +41,9 @@
                 InsertionMode = InsertionMode.Replace
             }))
             {
-                <input type="submit" value="Generate" class="btn btn-default" />
+                <div class="text-center">
+                    <input type="submit" value="Generate" class="btn btn-primary" />
+                </div>
             }
 
             <div id="single">
@@ -51,15 +57,21 @@
 
         </p>
     </div>
-    <div class="col-md-6">
-        <h2> Web Api Json random numbers</h2>
-        <a href="@Url.Action("ChaoticArray", "api")">
-            <div class="btn btn-default">Get JSON</div>
-        </a>
-
-
+    <div class="col-md-1">
+        &nbsp;
     </div>
-</div>
+        <div class="col-md-6">
+            <h2> Web Api Json random numbers</h2>
+            <a href="@Url.Action("ChaoticArray", "api")">
+                <div class="text-center">
+                    
+                    <div class="btn btn btn-primary">Get JSON</div>
+                </div>
+            </a>
+
+
+        </div>
+    </div>
 
 @section scripts{
 
