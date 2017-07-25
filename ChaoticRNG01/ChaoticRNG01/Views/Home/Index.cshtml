@@ -65,7 +65,40 @@
     <div class="col-md-1">
         &nbsp;
     </div>
+    
+    
     <div class="col-md-6">
+        <h2> Web Api Json random numbers</h2>
+        <h3>Use: <b>http://localhost:25708/api/ChaoticArray</b> In JSON Format</h3>
+        <p>
+            @using (Ajax.BeginForm("GetMultiple","Home", new AjaxOptions
+            {
+                UpdateTargetId = "multiple",
+                HttpMethod = "post",
+                AllowCache = false,
+                LoadingElementId = "mloading",
+                InsertionMode = InsertionMode.Replace
+            }))
+            {
+                <div class="text-center">
+                    <input type="submit" value="Get JSON" class="btn btn-primary" />
+                </div>
+            }
+
+            <div id="multiple">
+                <h5 id="mloading">
+                    @*//install font awesome
+                        Install-Package FontAwesome*@
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                </h5>
+            </div>
+
+        </p>
+    </div>
+    
+    
+
+    @*<div class="col-md-6">
         <h2> Web Api Json random numbers</h2>
         <a href="@Url.Action("ChaoticArray", "api")">
             <div class="text-center">
@@ -75,7 +108,7 @@
         </a>
 
 
-    </div>
+    </div>*@
 </div>
 
 <div class="row">

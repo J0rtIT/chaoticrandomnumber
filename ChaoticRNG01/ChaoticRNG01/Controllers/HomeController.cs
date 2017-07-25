@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using ChaoticRNG01.Models;
 using System.Web.Mvc;
-
-using ChaoticRNG01.Models;
 
 namespace ChaoticRNG01.Controllers
 {
@@ -21,6 +16,13 @@ namespace ChaoticRNG01.Controllers
             rgn.SingleNumber = rgn.GetSingleRN();
 
             return PartialView("_single", rgn.SingleNumber);
+        }
+
+        public ActionResult GetMultiple()
+        {
+
+            double[] array = new ChaoticArrayController().Get();
+            return PartialView("_multiple", array);
         }
     }
 }
