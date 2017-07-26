@@ -12,8 +12,8 @@ namespace ChaoticRNG01.Controllers
 
         public ActionResult GetSingle()
         {
-            ChaoticRNG rgn = new ChaoticRNG();
-            rgn.SingleNumber = rgn.GetSingleRN();
+            ChaoticRng rgn = new ChaoticRng();
+            rgn.SingleNumber = rgn.GetSingleRn();
 
             return PartialView("_single", rgn.SingleNumber);
         }

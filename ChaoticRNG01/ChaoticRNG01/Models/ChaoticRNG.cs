@@ -1,64 +1,86 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChaoticRNG01.Models
 {
-    public class ChaoticRNG
+    public class ChaoticRng
     {
-        const int iterations = 2000;
-        const int transcient = 1000;
-        const double r = 4.0; //r for chaotic behavior of logistic map
+        const int Iterations = 2000;
+        const int Transcient = 1000;
+        const double R = 4.0; //r for chaotic behavior of logistic map
+
+        public double Average { get; set; }
+        public double DesStad { get; set; }
 
         public double SingleNumber { get; set; }
         public double[] ArrayNumber { get; set; }
 
-        public ChaoticRNG()
+        public ChaoticRng()
         {
             SingleNumber = 0.0;
-            ArrayNumber = new double[iterations];
+            ArrayNumber = new double[Iterations];
         }
 
-        public double GetSingleRN()
+        public double GetSingleRn()
         {
             //generate the seed (pseudo random number)
             Random rd = new Random();
             double x0 = rd.Next(0, int.MaxValue);
-            x0/= int.MaxValue;
+            x0 /= int.MaxValue;
             double x1 = 0.0;
-            for (int i = 0; i < iterations; i++)
+            for (int i = 0; i < Iterations; i++)
             {
                 //Logistic Map
                 //Xn+1 = r * Xn * (1 - Xn) 
-                x1 = r * x0 * (1.0 - x0);
+                x1 = R * x0 * (1.0 - x0);
                 x0 = x1;
             }
             return x1;
         }
 
-        public double[] GetArrayRN()
+        public double[] GetArrayRn()
         {
             //generate the seed (pseudo random number)
             Random rd = new Random();
-            double x0 = (double) rd.Next(0, int.MaxValue);
+            double x0 = rd.Next(0, int.MaxValue);
             x0 /= int.MaxValue;
 
-            double x1 = 0.0;
-            for (int i = 0; i < iterations + transcient; i++)
+            for (int i = 0; i < Iterations + Transcient; i++)
             {
                 //Logistic Map
                 //Xn+1 = r * Xn * (1 - Xn) 
-                x1 = r * x0 * (1.0 - x0);
-                if (i >= transcient)
+                var x1 = R * x0 * (1.0 - x0);
+                if (i >= Transcient)
                 {
-                    ArrayNumber[i - transcient] = x0;
+                    ArrayNumber[i - Transcient] = x0;
                 }
                 x0 = x1;
             }
+            Average = ArrayNumber.Average();
+            DesStad = Devest(ArrayNumber);
             return ArrayNumber;
         }
 
+
+        public static Double FindAverage(Double[] inputArray)
+        {
+            return inputArray.Average();
+        }
+
+        public static Double Devest(Double[] inputArray)
+        {
+            double average = inputArray.Average();
+            double sumOfDerivation = 0;
+            foreach (double value in inputArray)
+            {
+                sumOfDerivation += (value) * (value);
+            }
+
+            double sumOfDerivationAverage = sumOfDerivation / (inputArray.Length - 1);
+            return Math.Sqrt(sumOfDerivationAverage - (average * average));
+        }
+
     }
+
+
 }
