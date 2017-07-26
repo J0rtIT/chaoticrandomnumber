@@ -1,4 +1,5 @@
 ﻿using ChaoticRNG01.Models;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace ChaoticRNG01.Controllers
@@ -20,9 +21,12 @@ namespace ChaoticRNG01.Controllers
 
         public ActionResult GetMultiple()
         {
+            ChaoticRng rgn = new ChaoticRng();
+            rgn.ArrayNumber = new ChaoticArrayController().Get();
+            rgn.Average = rgn.ArrayNumber.Average();
+            rgn.DesStad = rgn.Devest(rgn.ArrayNumber);
 
-            double[] array = new ChaoticArrayController().Get();
-            return PartialView("_multiple", array);
+            return PartialView("_multiple", rgn);
         }
     }
 }

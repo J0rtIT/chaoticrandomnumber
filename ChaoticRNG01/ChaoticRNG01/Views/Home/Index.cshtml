@@ -5,37 +5,37 @@
 <div> &nbsp;</div>
 
 <div class="jumbotron">
-    <h1>Chaotic Random Generator Number</h1>
-    <p class="lead">From Pseudo-Random generator number to real chaotic Random Generator. </p>
+    <h1>@ChaoticRNG01.Resources.lang.title</h1>
+    <p class="lead">@ChaoticRNG01.Resources.lang.lead </p>
 </div>
 
 <div class="row">
 
     <div class="col-md-5">
-        <h2>Logistic Map Theory</h2>
+        <h2>@ChaoticRNG01.Resources.lang.LogisticMapTheoryTitle</h2>
         <p class="text-justify">
-            This WebApp uses a Pseudo-Random number generator using the .Net class called <a href="https://msdn.microsoft.com/en-us/library/system.random(v=vs.110).aspx">Random</a> introduced in .Net 4.5 as pesudo-random number generator that meets statistical requiremets for randomness (<a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">Source Code</a>). Now using this generator and the <a href="https://en.wikipedia.org/wiki/Logistic_map">Logistic Map</a> equation using the parameter r=4 to be sure to be in the chaotic response and iterate the equation a thousand times
+            @ChaoticRNG01.Resources.lang.LogisticMapTheoryContent <a href="https://msdn.microsoft.com/en-us/library/system.random(v=vs.110).aspx"> @ChaoticRNG01.Resources.lang.Random </a>@ChaoticRNG01.Resources.lang.LogisticMapTheoryContent2
+            (<a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">@ChaoticRNG01.Resources.lang.Source</a>).
+            @ChaoticRNG01.Resources.lang.LogisticMapTheoryContent3 <a href="https://en.wikipedia.org/wiki/Logistic_map">@ChaoticRNG01.Resources.lang.LogisticMap</a> @ChaoticRNG01.Resources.lang.LogisticMapTheoryContent4
         </p>
     </div>
     <div class="col-md-1">
         &nbsp;
     </div>
     <div class="col-md-6">
-        <h2>Chaotic Random Number Generator</h2>
+        <h2>@ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorTitle</h2>
         <h3 class="text-center">
             Xn+1 = r Xn (1 - Xn) <br /> <br />
         </h3>
         <h4 class="text-center">
-            Parameters
-            r =4.0, iterations = 2000, transcient = 1000.
+            @ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorContent 
         </h4>
-
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-5">
-        <h2>Single Generator Number</h2>
+        <h2>@ChaoticRNG01.Resources.lang.SingleGeneratorTitle</h2>
         <p>
             @using (Ajax.BeginForm("GetSingle", "Home", new AjaxOptions
             {
@@ -47,14 +47,13 @@
             }))
             {
                 <div class="text-center">
-                    <input type="submit" value="Generate" class="btn btn-primary" />
+                    <input type="submit" value="@ChaoticRNG01.Resources.lang.Generate" class="btn btn-primary" />
                 </div>
             }
 
             <div id="single">
                 <h5 id="loading">
-                    @*//install font awesome
-                        Install-Package FontAwesome*@
+                    @*//install font awesome  -> Install-Package FontAwesome*@
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                 </h5>
 
@@ -68,8 +67,8 @@
     
     
     <div class="col-md-6">
-        <h2> Web Api Json random numbers</h2>
-        <div style="text-align: center;"><h4>For <b>JSON Format</b> use: <a href="https://chaos.j0rt3g4.com/api/ChaoticArray" target="_blank">/api/ChaoticArray</a></h4> </div>
+        <h2>  @ChaoticRNG01.Resources.lang.MultipleGeneratorTitle   </h2>
+        <div style="text-align: center;"><h4>For <b>JSON Format</b> @ChaoticRNG01.Resources.lang.Use: <a href="https://chaos.j0rt3g4.com/api/ChaoticArray" target="_blank">/api/ChaoticArray</a></h4> </div>
         <p>
             @using (Ajax.BeginForm("GetMultiple","Home", new AjaxOptions
             {
@@ -81,7 +80,7 @@
             }))
             {
                 <div class="text-center">
-                    <input type="submit" value="Get JSON" class="btn btn-primary" />
+                    <input type="submit" value="@ChaoticRNG01.Resources.lang.GJSON" class="btn btn-primary" />
                 </div>
             }
 
@@ -121,7 +120,5 @@
 </div>
 
 @section scripts{
-
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-
 }

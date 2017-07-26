@@ -62,12 +62,7 @@ namespace ChaoticRNG01.Models
         }
 
 
-        public static Double FindAverage(Double[] inputArray)
-        {
-            return inputArray.Average();
-        }
-
-        public static Double Devest(Double[] inputArray)
+        public double Devest(Double[] inputArray)
         {
             double average = inputArray.Average();
             double sumOfDerivation = 0;
