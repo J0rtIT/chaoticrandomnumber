@@ -11,23 +11,23 @@
 
 <div class="row">
 
-    <div class="col-md-5">
+    <div class="col-md-5 text-justify">
         <h2>@ChaoticRNG01.Resources.lang.LogisticMapTheoryTitle</h2>
-        <p class="text-justify">
+        <h4 class="text-justify">
             @ChaoticRNG01.Resources.lang.LogisticMapTheoryContent <a href="https://msdn.microsoft.com/en-us/library/system.random(v=vs.110).aspx"> @ChaoticRNG01.Resources.lang.Random </a>@ChaoticRNG01.Resources.lang.LogisticMapTheoryContent2
             (<a href="http://referencesource.microsoft.com/#mscorlib/system/random.cs,bb77e610694e64ca">@ChaoticRNG01.Resources.lang.Source</a>).
             @ChaoticRNG01.Resources.lang.LogisticMapTheoryContent3 <a href="https://en.wikipedia.org/wiki/Logistic_map">@ChaoticRNG01.Resources.lang.LogisticMap</a> @ChaoticRNG01.Resources.lang.LogisticMapTheoryContent4
-        </p>
+        </h4>
     </div>
     <div class="col-md-1">
         &nbsp;
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 text-center">
         <h2>@ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorTitle</h2>
-        <h3 class="text-center">
+        <h3>
             Xn+1 = r Xn (1 - Xn) <br /> <br />
         </h3>
-        <h4 class="text-center">
+        <h4>
             @ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorContent 
         </h4>
     </div>
@@ -50,13 +50,12 @@
                     <input type="submit" value="@ChaoticRNG01.Resources.lang.Generate" class="btn btn-primary" />
                 </div>
             }
-
-            <div id="single">
-                <h5 id="loading" hidden="">
-                    @*//install font awesome  -> Install-Package FontAwesome*@
+            
+            <div class="text-center" id="single">
+                <h5 id="mloading" hidden>
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                 </h5>
-
+              
             </div>
 
         </p>
@@ -83,15 +82,15 @@
                     <input type="submit" value="@ChaoticRNG01.Resources.lang.GJSON" class="btn btn-primary" />
                 </div>
             }
-
-            <div id="multiple">
+            
+            <div class="text-center" id="multiple">
                 <h5 id="mloading" hidden>
                     @*//install font awesome
                         Install-Package FontAwesome*@
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                 </h5>
+              
             </div>
-
         </p>
     </div>
     
