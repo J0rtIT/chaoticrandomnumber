@@ -121,7 +121,7 @@
     <value>Promedio</value>
   </data>
   <data name="ChaoticRandomNumberGeneratorContent" xml:space="preserve">
-    <value>Parametros:  r =4.0 \\\\ iteraciones = 2000  transciente = 1000</value>
+    <value>Parametros:  r =4.0 \\\\ iteraciones = 2000,  transciente = 1000</value>
   </data>
   <data name="ChaoticRandomNumberGeneratorTitle" xml:space="preserve">
     <value>Generador de Numeros Aleatorios Caótico</value>

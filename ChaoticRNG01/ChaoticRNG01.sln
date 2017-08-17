@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaoticRNG01", "ChaoticRNG01\ChaoticRNG01.csproj", "{01E725EA-CAC2-47D1-AFFC-4548E6424DB0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{131C3B79-34AD-4AB0-B568-5E390ADD1756} = {131C3B79-34AD-4AB0-B568-5E390ADD1756}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaoticRandom", "ChaoticRandom\ChaoticRandom.csproj", "{131C3B79-34AD-4AB0-B568-5E390ADD1756}"
 EndProject
