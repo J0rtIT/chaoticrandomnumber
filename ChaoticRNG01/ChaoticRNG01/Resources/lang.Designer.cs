@@ -70,7 +70,7 @@ namespace ChaoticRNG01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Parameters:   r =4.0, iterations = 2000, transcient = 1000..
+        ///   Looks up a localized string similar to Parameters:   r =4.0 \\\\ iterations = 2000,  transcient = 1000..
         /// </summary>
         public static string ChaoticRandomNumberGeneratorContent {
             get {

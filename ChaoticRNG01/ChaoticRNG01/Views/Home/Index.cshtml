@@ -25,10 +25,14 @@
     <div class="col-md-6 text-center">
         <h2>@ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorTitle</h2>
         <h3>
-            Xn+1 = r Xn (1 - Xn) <br /> <br />
+            $$
+            x_{n+1} = r X_n (1 - X_n ) \\\\ 
+            $$
         </h3>
         <h4>
-            @ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorContent 
+            $$
+            @ChaoticRNG01.Resources.lang.ChaoticRandomNumberGeneratorContent
+            $$
         </h4>
     </div>
 </div>
@@ -46,16 +50,16 @@
                 InsertionMode = InsertionMode.Replace
             }))
             {
-                <div class="text-center">
-                    <input type="submit" value="@ChaoticRNG01.Resources.lang.Generate" class="btn btn-primary" />
-                </div>
+            <div class="text-center">
+                <input type="submit" value="@ChaoticRNG01.Resources.lang.Generate" class="btn btn-primary" />
+            </div>
             }
-            
+
             <div class="text-center" id="single">
-                <h5 id="mloading" hidden>
+                <h5 id="loading" hidden>
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                 </h5>
-              
+
             </div>
 
         </p>
@@ -63,8 +67,8 @@
     <div class="col-md-1">
         &nbsp;
     </div>
-    
-    
+
+
     <div class="col-md-6">
         <h2>  @ChaoticRNG01.Resources.lang.MultipleGeneratorTitle   </h2>
         <div style="text-align: center;"><h4>For <b>JSON Format</b> @ChaoticRNG01.Resources.lang.Use: <a href="https://chaos.j0rt3g4.com/api/ChaoticArray" target="_blank">/api/ChaoticArray</a></h4> </div>
@@ -78,35 +82,35 @@
                 InsertionMode = InsertionMode.Replace
             }))
             {
-                <div class="text-center">
-                    <input type="submit" value="@ChaoticRNG01.Resources.lang.GJSON" class="btn btn-primary" />
-                </div>
+            <div class="text-center">
+                <input type="submit" value="@ChaoticRNG01.Resources.lang.GJSON" class="btn btn-primary" />
+            </div>
             }
-            
+
             <div class="text-center" id="multiple">
                 <h5 id="mloading" hidden>
                     @*//install font awesome
                         Install-Package FontAwesome*@
                     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                 </h5>
-              
+
             </div>
         </p>
     </div>
-    
-    
+
+
 
     @*<div class="col-md-6">
-        <h2> Web Api Json random numbers</h2>
-        <a href="@Url.Action("ChaoticArray", "api")">
-            <div class="text-center">
+            <h2> Web Api Json random numbers</h2>
+            <a href="@Url.Action("ChaoticArray", "api")">
+                <div class="text-center">
 
-                <div class="btn btn btn-primary">Get JSON</div>
-            </div>
-        </a>
+                    <div class="btn btn btn-primary">Get JSON</div>
+                </div>
+            </a>
 
 
-    </div>*@
+        </div>*@
 </div>
 
 <div class="row">
@@ -120,4 +124,13 @@
 
 @section scripts{
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { extensions: ["autoload-all.js"] },
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+        });
+    </script>
 }

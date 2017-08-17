@@ -121,7 +121,7 @@
     <value>Average</value>
   </data>
   <data name="ChaoticRandomNumberGeneratorContent" xml:space="preserve">
-    <value>Parameters:   r =4.0, iterations = 2000, transcient = 1000.</value>
+    <value>Parameters:   r =4.0 \\\\ iterations = 2000,  transcient = 1000.</value>
   </data>
   <data name="ChaoticRandomNumberGeneratorTitle" xml:space="preserve">
     <value>Chaotic Random Number Generator</value>
